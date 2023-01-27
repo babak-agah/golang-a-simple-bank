@@ -38,9 +38,6 @@ jobs:
       - name: Make Container
         run: make postgres
 
-      - name: Create DB
-        run: make createdb
-
       - name: Run migrations
         run: make migrateup
 
