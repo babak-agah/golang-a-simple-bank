@@ -35,9 +35,14 @@ jobs:
         with:
           go-version: 1.19
         id: go
-      - name: Make Container
-        run: make postgres
-
+        
+        
+      - name: Install golang-migrate
+        run: |
+          curl -L https://github.com/golang-migrate/migrate/releases/download/v4.15.2/migrate-4.15.2.zip | tar xvz
+          sudo mv migrate.linux-amd64 /user/bin/
+          which migrate    
+    
       - name: Run migrations
         run: make migrateup
 
