@@ -21,6 +21,7 @@ jobs:
           POSTGERS_USER: root
           POSTGRES_PASSWORD: secret
           POSTGRES_DB: bank
+          POSTGRES_PORT: 5432
         ports:
           - 5432:5432
         options: >-
